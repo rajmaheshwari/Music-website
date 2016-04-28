@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load loop %}
+{% load staticfiles %}
+
+{%block title%}
+	2010
+{% endblock %}
+
+{%block content%}
+<div class="hidden url" id="{% static 'music1/sounds/Year_2010' %}">
+</div>
+
+<div class="row body">
+	<div class="col-lg-2">
+	</div>
+
+	<div class="col-lg-9">
+		<h3>All songs in the year 2010</h3>
+		<ul>
+			{% for film in list %}
+				<div class="panel">
+    				<div class="panel-heading colored_panel" data-toggle="collapse" data-parent="#accordion" data-target="#collapse{{forloop.counter}}">
+    					{{film}}
+    				</div>
+    				<div class="panel-collapse collapse" id="collapse{{forloop.counter}}">
+    					<table class="table col-lg-offset-1">
+							<tbody>
+		    					{% for song, val in info|index:forloop.counter0 %}
+		    						<tr height="10px">
+		    							<td class="col-sm-6 song" style="cursor: pointer">{{song}}</td>
+		    							<td class="col-sm-6 player" id="{{song}}"></td>
+		    						</tr>
+		    					{% endfor %}
+	    					</tbody>
+    					</table>
+    				</div>
+  				</div>
+			{% endfor %}
+		</ul>
+	</div>
+
+	<div class="col-lg-1">
+	</div>
+</div>
+
+<!-- .............................................................................. -->
+<script>
+
+function clear(){
+ 	$("td.player").empty();
+}
+	$(document).ready(function(){
+		var x = $(".url").attr("id");
+
+		$("td.song").click(function(){
+ 			clear();
+ 			if( $(this).next().attr('id') == "Mora Piya"){
+ 				$(this).next().append('<audio src="'+x+'/fade to black.mp3" controls></audio>');		
+ 			}
+ 			else if( $(this).next().attr('id') == "Ishq Barse"){
+ 				$(this).next().append('<audio src="'+x+'/Challa.mp3" controls></audio>');		
+ 			}
+ 			else{
+ 				$(this).next().append('<audio src="'+x+'/HeyYou.mp3" controls></audio>');
+ 			}
+		});
+	});
+</script>
+
+{% endblock %}

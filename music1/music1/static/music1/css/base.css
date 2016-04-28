@@ -1,0 +1,24 @@
+.brand {
+  background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQdfKqtckhuekrd4szV7fRhFNUIqFwrIP9B2glbtnXl80juq-PKzg');
+  width: 240px;
+  height: 80px;
+  float: left;
+  width: 240px;
+  height: 80px;
+  position: relative;
+}
+
+.header_top{
+	background-color: #DCD8CF;
+}
+
+.years{
+	background-color: #DCD8CF;	
+}
+
+.roundrect {
+border-radius: 15px;
+height: 42px;
+width: 42px; 
+}
+

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{%block title%}
+	Music1
+{% endblock %}
+
+{%block content%}
+
+	<div class="row years">
+  		<div class="col-lg-2">
+  		</div>
+
+  		<div class="col-lg-8">
+		    <div class="col-lg-4 dash-card">
+		      	<a href="{% url 'index_2011_2015' %}">
+		      	<div class="white-panel">
+		     	    <p>2011-2015</p>
+		      	</div> 
+		      	</a>
+		    </div>
+			
+			<div class="col-lg-4 dash-card">
+			    <a href="{% url 'index_2001_2010' %}">
+			    <div class="white-panel">
+			        <p>2001-2010</p>
+			    </div> 
+			    </a>
+			</div>
+
+		    <div class="col-lg-4 dash-card">
+		    	<a href="{% url 'index_1991_2000' %}">
+		    	<div class="white-panel">
+		          	<p>1991-2000</p>
+		    	</div> 
+		    	</a>
+		  	</div>
+
+		  	<div class="col-lg-4 dash-card">
+		    	<a href="#">
+		    	<div class="white-panel">
+		          	<p>1981-1990</p>
+		    	</div> 
+		    	</a>
+		  	</div>
+
+		  	<div class="col-lg-4 dash-card">
+		    	<a href="#">
+		    	<div class="white-panel">
+		          <p >1971-1980</p>
+		    	</div> 
+		    	</a>
+		  	</div>
+
+		  	<div class="col-lg-4 dash-card">
+		    	<a href="#">
+		    	<div class="white-panel">
+		          <p >1961-1970</p>
+		    	</div> 
+		    	</a>
+		  	</div>
+
+		  	<div class="col-lg-4 dash-card">
+		    	<a href="#">
+		    	<div class="white-panel">
+		          <p >Before 1960</p>
+		    	</div> 
+		    	</a>
+		  	</div>
+		</div>
+
+		<div class="col-lg-2">
+		</div>
+
+	</div>
+
+<style>
+
+.dash-card{
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.white-panel {
+  text-align: center;
+  background-image: url('http://a10.gaanacdn.com/media/images-v5/default-album-175x175.jpg');
+  color: #ff9900;
+  height: 175px;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  padding: 25px 0;
+}
+
+</style>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% load staticfiles %}
+
+.brand {
+  background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQdfKqtckhuekrd4szV7fRhFNUIqFwrIP9B2glbtnXl80juq-PKzg');
+  width: 240px;
+  height: 80px;
+  float: left;
+  width: 240px;
+  height: 80px;
+  position: relative;
+}
+
+.colored_panel{
+  color: #ff0;
+  background-color: #661499;
+  border-color: #ddd;
+}
+
+.panel-heading {
+    cursor: pointer;
+}
+
+
+

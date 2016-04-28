@@ -1,0 +1,62 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 	<title>
+  		{% block title %}
+		{% endblock %}
+  	</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'music1/css/base.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'movie_all_years/css/style.css' %}" />
+</head>
+
+<body>
+<div class="row header_top">
+	<div class="col-sm-3">
+		<a href="{% url 'index' %}" class="logo">
+			<div class="brand">    		
+	    	</div>   	
+    	</a> 	
+    </div>
+
+    <div class="col-sm-9">
+    	<div class="col-sm-8">
+    		<img src="{{ request.session.picture }}">
+    	</div>
+
+    	<div class="col-sm-2">
+	   		<a href="{% url 'login' %}" class="btn btn-warning" style="padding: 10px">Login</a>
+			<a href="{% url 'signup' %}" class="btn btn-warning" style="padding: 10px">Signup</a>
+		</div>
+
+		<div class="dropdown col-sm-2">
+			{% if request.session.name %}
+			<img class="roundrect" src="{% static 'users/images/user_pictures/Unknown-3.png' %}" id="menu1" data-toggle="dropdown">
+			
+	    	<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+			   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Settings</a></li>
+			   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
+			   <li role="presentation" class="divider"></li>
+			   <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'logout'%}">Logout</a></li>
+	    	</ul>
+	    	{% else %}
+	    	<button class="btn btn-warning dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" style="padding: 10px">More<span class="caret"></span></button>
+	    	<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+	    		<li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'login'%}">Login</a></li>
+	    	</ul>
+	    	{% endif %}
+    	</div>
+    </div>
+</div>
+	{% block content %}
+	{% endblock %}
+</body>
+
+</html>
